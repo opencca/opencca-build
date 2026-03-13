@@ -108,8 +108,8 @@ debian: kconfig ## Build kernel and package into .deb archive (requires initial 
     # XXX: deb-pkg creates *.deb files in parent
     # directory of linux dir. We move these to their own folder.
 	mkdir -p $(DEBIAN_RELEASE_DIR)
-	mv $(LINUX_DIR)/../linux-upstream* $(DEBIAN_RELEASE_DIR)
-	mv $(LINUX_DIR)/../linux-*.deb $(DEBIAN_RELEASE_DIR)
+	cp --no-clobber $(LINUX_DIR)/../linux-upstream* $(DEBIAN_RELEASE_DIR)
+	cp --no-clobber $(LINUX_DIR)/../linux-*.deb $(DEBIAN_RELEASE_DIR)
 	@echo "Files moved to $(DEBIAN_RELEASE_DIR)"
 	ls -al $(DEBIAN_RELEASE_DIR)/
 
