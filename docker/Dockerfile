@@ -185,7 +185,7 @@ ENV FORCE_UNSAFE_CONFIGURE=1
 
 # Install Debos
 ENV GOPATH=/build/gocode
-RUN go install -v github.com/go-debos/debos/cmd/debos@latest \
+RUN go install -v github.com/go-debos/debos/cmd/debos@v1.1.5 \
     && cp /build/gocode/bin/debos /usr/local/bin/ 
 RUN debos --help
 
